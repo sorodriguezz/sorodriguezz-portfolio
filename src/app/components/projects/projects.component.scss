@@ -1,0 +1,76 @@
+@use '../../../styles/variables.scss' as *;
+
+.projects {
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+    .project-card {
+      background: var(--bg-secondary-color);
+      color: var(--text-color);
+      border-radius: 8px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .project-info {
+        padding: 1rem;
+
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+
+        .technologies {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+
+          span {
+            background: var(--accent-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            color: #fff;
+          }
+        }
+
+        a {
+          display: inline-block;
+          padding: 0.5rem 1rem;
+          background: var(--accent-color);
+          color: #fff;
+          text-decoration: none;
+          border-radius: 4px;
+          transition: background 0.3s;
+
+          &:hover {
+            background: $accent-color-dark;
+          }
+        }
+      }
+    }
+  }
+}

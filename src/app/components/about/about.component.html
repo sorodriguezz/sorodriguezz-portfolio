@@ -1,0 +1,53 @@
+<div class="about">
+  <section class="summary">
+    <h2>Resumen</h2>
+    <br />
+    <p>
+      Soy un profesional con 6 años de experiencia apasionado por mi trabajo y siempre estoy buscando
+      nuevas oportunidades para aprender y crecer. Me gusta trabajar en
+      proyectos desafiantes y me esfuerzo por entregar resultados de alta
+      calidad.
+    </p>
+    <br>
+    <p>
+      Mi experiencia se centra en el área de desarrollo web, el cual abarca
+      Frontend, Backend, Base de datos, entre otros. He trabajado en varios
+      proyectos, y he tenido la oportunidad de colaborar con equipos de diversos
+      tamaños y ámbitos.
+    </p>
+    <br>
+    <p>
+      Me gusta mantenerme actualizado en mi campo de trabajo a través de la
+      lectura, cursos y conferencias.
+    </p>
+  </section>
+
+  <section class="experience">
+    <h2>Experiencia Laboral</h2>
+    <div class="timeline">
+      <div class="timeline-item" *ngFor="let exp of experiences; let i = index">
+        <div class="timeline-point"></div>
+        <div
+          class="timeline-content"
+          [ngClass]="{ left: i % 2 === 0, right: i % 2 !== 0 }"
+        >
+          <h3>{{ exp.date }}</h3>
+          <h4>{{ exp.position }} - {{ exp.company }}</h4>
+          <p>{{ exp.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="technologies">
+    <h2>Tecnologías</h2>
+    <div class="tech-cards">
+      <div class="tech-card" *ngFor="let tech of technologies">
+        <img [src]="tech.image" [alt]="tech.name" />
+        <div class="overlay">
+          <div class="text">{{ tech.name }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

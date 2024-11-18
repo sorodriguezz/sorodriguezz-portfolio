@@ -1,0 +1,80 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="navbar-content">
+    <div class="logo">
+      <div class="theme-toggle" (click)="toggleTheme()">
+        <span [class]="isDarkTheme ? 'icon-sun' : 'icon-moon'"></span>
+      </div>
+    </div>
+  </div>
+
+  <button class="menu-toggle" (click)="toggleMenu()">
+    <fa-icon [icon]="['fas', 'bars']"></fa-icon>
+  </button>
+
+  <ul class="nav-links" [class.open]="isMenuOpen">
+    <li>
+      <a
+        routerLink="/"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-button"
+        (click)="closeMenu()"
+      >
+        <fa-icon [icon]="['fas', 'home']"></fa-icon> Inicio
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/about"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-button"
+        (click)="closeMenu()"
+      >
+        <fa-icon [icon]="['fas', 'user']"></fa-icon> Sobre mí
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/projects"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-button"
+        (click)="closeMenu()"
+      >
+        <fa-icon [icon]="['fas', 'briefcase']"></fa-icon> Proyectos
+      </a>
+    </li>
+    <li>
+      <a
+        routerLink="/contact"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="nav-button"
+        (click)="closeMenu()"
+      >
+        <fa-icon [icon]="['fas', 'envelope']"></fa-icon> Contacto
+      </a>
+    </li>
+    <div class="navbar-right-responsive">
+      <div class="social-links">
+        <a href="https://github.com/sorodriguezz" target="_blank">
+          <fa-icon [icon]="['fab', 'github']"></fa-icon>
+        </a>
+        <a href="https://www.linkedin.com/in/sorodriguezz/" target="_blank">
+          <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </ul>
+  <div class="navbar-right">
+    <div class="social-links">
+      <a href="https://github.com/sorodriguezz" target="_blank">
+        <fa-icon [icon]="['fab', 'github']"></fa-icon>
+      </a>
+      <a href="https://www.linkedin.com/in/sorodriguezz/" target="_blank">
+        <fa-icon [icon]="['fab', 'linkedin']"></fa-icon>
+      </a>
+    </div>
+  </div>
+</nav>

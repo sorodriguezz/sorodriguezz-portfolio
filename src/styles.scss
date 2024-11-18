@@ -1,1 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./styles/variables.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #f0f0f0;
+  --bg-secondary-color: #ffffff;
+  --text-color: #333333;
+  --accent-color: #ff4081;
+  --border-color: #cccccc;
+  --error-color: #ff5252;
+  --disabled-color: #aaaaaa;
+  --accent-color-dark: #ff0659;
+  --color-button-cv: #ff4081;
+  --box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme {
+  --bg-color: #121212;
+  --bg-secondary-color: #1e1e1e;
+  --text-color: #e0e0e0;
+  --accent-color: #b77dff;
+  --border-color: #333333;
+  --error-color: #cf6679;
+  --accent-color-dark: #7300ff;
+  --color-button-cv: #8929fe;
+  --box-shadow: 0px 3px 5px rgba(255, 255, 255, 0.05);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Roboto", sans-serif;
+  transition: background 0.3s, color 0.3s;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color-dark); /* Hover del thumb */
+}
+
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--bg-color);
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+
+footer {
+  background: var(--bg-secondary-color);
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+}

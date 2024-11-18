@@ -1,0 +1,194 @@
+@use "../../../styles/variables.scss" as *;
+
+.about {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .summary {
+    h1 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    p {
+      color: var(--text-color);
+      line-height: 1.6;
+      text-align: justify;
+    }
+  }
+
+  .technologies {
+    margin-top: 3rem;
+    h2 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+    .tech-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+
+      .tech-card {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: var(--bg-secondary-color);
+        transition: transform 0.3s;
+
+        &:hover {
+          transform: scale(1.05);
+
+          .overlay {
+            opacity: 1;
+          }
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .overlay {
+          position: absolute;
+          bottom: 0;
+          background: var(
+            --color-button-cv
+          );
+          color: var(--bg-color);
+          width: 100%;
+          transition: 0.5s ease;
+          opacity: 0;
+          padding: 1rem;
+          text-align: center;
+
+          .text {
+            color: #fff;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .experience {
+    margin-top: 3rem;
+    h2 {
+      color: var(--text-color);
+      margin-bottom: 1rem;
+    }
+
+    .timeline {
+      position: relative;
+      margin: 0 auto;
+      padding: 2rem 0;
+      max-width: 800px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: var(--accent-color);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin: 2rem 0;
+
+        .timeline-point {
+          position: absolute;
+          left: 50%;
+          width: 16px;
+          height: 16px;
+          background: var(--text-color);
+          border-radius: 50%;
+          transform: translate(-50%, 0);
+        }
+
+        .timeline-content {
+          position: relative;
+          width: 45%;
+          padding: 1rem;
+          background: var(--bg-secondary-color);
+          border-radius: 8px;
+
+          &.left {
+            left: 0;
+            text-align: right;
+          }
+
+          &.right {
+            left: 55%;
+            text-align: left;
+          }
+
+          h3 {
+            margin-top: 0;
+            color: var(--text-color);
+          }
+
+          h4 {
+            margin: 0.5rem 0;
+            color: var(--accent-color);
+          }
+
+          p {
+            color: var(--text-color);
+            line-height: 1.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 1rem;
+
+    .technologies {
+      .tech-cards {
+        justify-content: center;
+
+        .tech-card {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+    .overlay {
+      display: none;
+    }
+
+    .experience {
+      .timeline {
+        &:before {
+          left: 8px;
+        }
+
+        .timeline-item {
+          .timeline-point {
+            left: 8px;
+          }
+
+          .timeline-content {
+            width: calc(100% - 60px);
+            &.left,
+            &.right {
+              left: 28px;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+  }
+}
