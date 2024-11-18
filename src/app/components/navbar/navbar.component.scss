@@ -1,18 +1,18 @@
 @use "../../../styles/variables.scss" as *;
 
 .navbar {
-  position: fixed; /* Fija el navbar en la parte superior */
-  top: 0; /* Asegura que esté pegado al borde superior */
-  left: 0; /* Asegura que esté alineado al borde izquierdo */
-  height: 4rem; /* Altura fija del navbar */
-  width: 100%; /* Asegura que ocupe todo el ancho de la pantalla */
-  z-index: 1000; /* Asegura que esté por encima del contenido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   align-items: center;
   padding: 1rem;
   background: var(--bg-color);
   color: var(--text-color);
-  box-shadow: var(--box-shadow); /* Opcional: agrega una sombra para separar del contenido */
+  box-shadow: var(--box-shadow);
 
   .navbar-content {
     display: flex;
