@@ -5,4 +5,5 @@ export interface Project {
   technologies: string[];
   image: string;
   link?: string;
+  demo?: string;
 }
