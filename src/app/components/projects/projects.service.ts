@@ -18,9 +18,10 @@ export class ProjectService {
       id: 2,
       name: 'Test',
       description: 'Proyecto testsdfs',
-      technologies: ['Angular','Angular','Angular','Angular','Angular'],
+      technologies: ['Angular','Angular','Angular'],
       image: '',
       link: 'sasd',
+      demo: 'dsds'
     },
   ];
 
